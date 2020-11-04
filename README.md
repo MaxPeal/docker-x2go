@@ -1,4 +1,4 @@
-# x2go-ubuntu
+# x2go via docker
 
 A nice and simple set of containers for quickly spinning up a "Remote desktop" environment. Handy for accessing a headless server without installing the x server on it. 
 

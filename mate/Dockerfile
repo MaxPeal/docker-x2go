@@ -1,6 +1,6 @@
 
-FROM adamprice56/x2go
-MAINTAINER Adam Price <adam@aprice.cf>
+FROM maxpeal/x2go
+MAINTAINER Max Peal
 
  # fix so resolvconf can be configured
  RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections

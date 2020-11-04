@@ -1,5 +1,5 @@
-FROM adamprice56/x2go
-MAINTAINER Adam Price <adam@aprice.cf>
+FROM maxpeal/x2go
+MAINTAINER Max Peal
 
 # Install KDE suite
 RUN apt-get update -y && apt-get install -y plasma-desktop

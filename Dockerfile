@@ -1,5 +1,5 @@
-FROM ubuntu:eoan
-MAINTAINER Adam Price <adam@aprice.cf>
+FROM ubuntu:18.04
+MAINTAINER Max Peal 
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -10,7 +10,8 @@ RUN apt-get update -y
 RUN apt-get install -y \
         software-properties-common \
         openssh-server \
-        apt-utils
+        apt-utils \
+	nvi
 
 # Upgrade packages
 RUN apt-get upgrade -y
@@ -22,6 +23,18 @@ RUN apt-get install -y x2goserver x2goserver-xsession --no-install-recommends
 
 # SSH runtime
 RUN mkdir /var/run/sshd
+
+# SSH change MaxAuthTries to 10
+RUN echo "MaxAuthTries 10" | tee -a /etc/ssh/sshd_config 
+
+# SSH disable PasswordAuthentication
+RUN echo "PasswordAuthentication no" | tee -a /etc/ssh/sshd_config
+
+# SSH PermitRootLogin only via key
+RUN echo "PermitRootLogin prohibit-password" | tee -a /etc/ssh/sshd_config
+
+# SSH disable root login
+#RUN echo "PermitRootLogin no" | tee -a /etc/ssh/sshd_config
 
 #Configure root password
 RUN echo "root:SuperSecureRootPassword" | chpasswd

@@ -1,4 +1,4 @@
-FROM maxpeal/x2go
+FROM maxpeal/x2go:latest-18
 MAINTAINER Max Peal
 
 # Install KDE suite

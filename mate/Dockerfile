@@ -1,5 +1,5 @@
 
-FROM maxpeal/x2go
+FROM maxpeal/x2go:latest-18
 MAINTAINER Max Peal
 
  # fix so resolvconf can be configured

@@ -34,7 +34,13 @@ TODO: Write usage instructions
 * Now updated for ubuntu 18.04 LTS! - Just add -18 to the end of the tags to get the 18.04 based version
   ~~~~
   docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:xfce-18
+  ~~~~
+  ~~~~
   docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:kde-18
+  ~~~~
+  ~~~~
   docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:mate-18
+  ~~~~
+  ~~~~
   docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:latest-18
   ~~~~

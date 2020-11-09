@@ -15,7 +15,7 @@ You can either have one container per user, or share a container with multiple u
 **I'd recommend mounting an external directory for /home to preserve data when containers are deleted/updated**
 
 ~~~~
-docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:(latest/kde/xfce)
+docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:(latest/kde/mate/xfce)
 ~~~~
 
 ## Usage
@@ -25,9 +25,24 @@ TODO: Write usage instructions
 ## Tags
 
 * latest
-  * ubuntu 18.04 LTS, Basic image with **NO DESKTOP** - Build whatever you want!
+  * ubuntu 20.04 LTS, Basic image with **NO DESKTOP** - Build whatever you want!
 * kde
   * You guessed it, it's got the KDE plasma desktop.
+* mate
+  * With MATE desktop.
 * xfce
   * Yep. It's XFCE, just the way xubuntu user's like it.
-  * Now updated for ubuntu 17.10! - Just add 17 to the end of the tags to get the 17.10 based version.
+
+* Now updated for ubuntu 18.04 LTS! - Just add -18 to the end of the tags to get the 18.04 based version
+  ~~~~
+  docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:xfce-18
+  ~~~~
+  ~~~~
+  docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:kde-18
+  ~~~~
+  ~~~~
+  docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:mate-18
+  ~~~~
+  ~~~~
+  docker run -td -p 2222:22 -v /mnt/dockerhome:/home maxpeal/x2go:latest-18
+  ~~~~

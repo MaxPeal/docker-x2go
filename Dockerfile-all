@@ -84,5 +84,5 @@ RUN apt-get update -y && apt-get install -y --install-recommends ubuntu-mate-des
 
 # Run it
 EXPOSE 22
-CMD ["service ssh start && service x2goserver start"]
+CMD ["ssh-keygen -A && service ssh start && service x2goserver start"]
 CMD ["/usr/sbin/sshd", "-D"]

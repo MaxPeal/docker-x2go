@@ -25,9 +25,9 @@ TODO: Write usage instructions
 ## Tags
 
 * latest
-  * ubuntu 18.04 LTS, Basic image with **NO DESKTOP** - Build whatever you want!
+  * ubuntu 20.04 LTS, Basic image with **NO DESKTOP** - Build whatever you want!
 * kde
   * You guessed it, it's got the KDE plasma desktop.
 * xfce
   * Yep. It's XFCE, just the way xubuntu user's like it.
-  * Now updated for ubuntu 17.10! - Just add 17 to the end of the tags to get the 17.10 based version.
+  * Now updated for ubuntu 18.04 LTS! - Just add -18 to the end of the tags to get the 18.04 based version.

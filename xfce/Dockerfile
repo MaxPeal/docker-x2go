@@ -5,4 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #Install xubuntu desktop for XFCE
 #RUN apt-get update -y && apt-get install -y xubuntu-desktop
-RUN apt-get update -y && apt-get install -y xubuntu-desktop --install-recommends
+RUN apt-get update -y && apt-get install -y xfce4 --install-recommends \
+       && apt-get install -y xubuntu-desktop --install-recommends
+#	&& apt-get install -y xubuntu-desktop --install-recommends

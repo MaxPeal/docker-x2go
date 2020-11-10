@@ -18,9 +18,10 @@ RUN apt-get install -y \
 RUN apt-get upgrade -y
 
 # Install X2Go server components
-RUN add-apt-repository ppa:x2go/stable
-RUN apt-get update -y
-RUN apt-get install -y x2goserver x2goserver-xsession --no-install-recommends
+####RUN add-apt-repository ppa:x2go/stable
+###RUN apt-get update -y && apt-get install -y x2goserver x2goserver-xsession --no-install-recommends
+RUN apt-get update -y && apt-get install -y x2goserver x2goserver-xsession --install-recommends
+
 
 # SSH runtime
 RUN mkdir /var/run/sshd

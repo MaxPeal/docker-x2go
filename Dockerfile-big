@@ -22,12 +22,6 @@ RUN apt-get upgrade -y
 RUN cp -p /usr/local/sbin/unminimize /root/unminimize-bakup
 RUN echo "Y" | unminimize
 
-# Install X2Go server components
-RUN add-apt-repository ppa:x2go/stable
-RUN apt-get update -y
-###RUN apt-get install -y x2goserver x2goserver-xsession --no-install-recommends
-RUN apt-get install -y x2goserver x2goserver-xsession --install-recommends 
-
 # SSH runtime
 RUN mkdir /var/run/sshd
 
@@ -63,9 +57,6 @@ RUN chown x2go:x2go /home/x2go/Desktop
 #Expire root password after a day
 #RUN chage -d 1 root
 
-# clear existing ssh-host-keys
-RUN rm /etc/ssh/ssh_host_*key /etc/ssh/ssh_host_*key.pub ||:
-
 ###############
 #RUN apt-get update -y && apt-get upgrade -y
 
@@ -73,14 +64,23 @@ RUN rm /etc/ssh/ssh_host_*key /etc/ssh/ssh_host_*key.pub ||:
 RUN apt-get update -y && apt-get install -y --install-recommends xubuntu-desktop
 
 # Install KDE suite
-RUN apt-get update -y && apt-get install -y --install-recommends plasma-desktop
+#RUN apt-get update -y && apt-get install -y --install-recommends plasma-desktop
+RUN apt-get update -y && apt-get install -y --install-recommends kubuntu-desktop
 
 #Install ubuntu mate desktop for MATE + extras
 # fix so resolvconf can be configured
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
-RUN apt-get update -y && apt-get install -y --install-recommends ubuntu-mate-desktop x2gomatebindings
+#RUN apt-get update -y && apt-get install -y --install-recommends ubuntu-mate-desktop x2gomatebindings
+RUN apt-get update -y && apt-get install -y --install-recommends ubuntu-mate-desktop 
 ###############
 
+# Install X2Go server components
+###RUN add-apt-repository ppa:x2go/stable
+###RUN apt-get update -y && apt-get install -y x2goserver x2goserver-xsession --no-install-recommends
+RUN apt-get update -y && apt-get install -y x2goserver x2goserver-xsession --install-recommends
+
+# clear existing ssh-host-keys
+RUN rm /etc/ssh/ssh_host_*key /etc/ssh/ssh_host_*key.pub ||:
 
 # Run it
 EXPOSE 22

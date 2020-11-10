@@ -62,5 +62,6 @@ RUN rm /etc/ssh/ssh_host_*key /etc/ssh/ssh_host_*key.pub ||:
 
 # Run it
 EXPOSE 22
-CMD ["ssh-keygen -A && service ssh start && service x2goserver start"]
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["service ssh start && service x2goserver start"]
+CMD ["/bin/sh", "-c", "/usr/bin/ssh-keygen -A && /usr/sbin/sshd -D"]
+
